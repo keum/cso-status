@@ -15,10 +15,18 @@ $(document).ready(function() {
               //'<strong>'+layer.feature.properties.CSO_TagName+' '+layer.feature.properties.DSN+
               //' '+layer.feature.properties.Name+'</strong>'+
               //layer.feature.properties.description+': '+layer.feature.properties.Time_stamp;
-    featureLayer.on('ready', function() {
+    featureLayer.on('layeradd', function(e) {
     // featureLayer.getBounds() returns the corners of the furthest-out markers,
     // and map.fitBounds() makes sure that the map contains these.
-    featureLayer.bindPopup('howdy 4');
+      var marker = e.layer,
+          feature = marker.feature;
+
+      var popupContent =  '<h2>our data<\/h2>' +
+          '<p>DSN: ' + feature.properties.DSN + '<br \/>' +
+          'CSO_Status: ' + feature.properties.CSO_Status + '<br \/>' +
+          'Name: ' + feature.properties.Name + '<br \/>' + '<\/p>';
+      featureLayer.bindPopup(popupContent);
+    //featureLayer.bindPopup('howdy 5');
     });
 
 
