@@ -20,12 +20,12 @@ $(document).ready(function() {
     // and map.fitBounds() makes sure that the map contains these.
       var marker = e.layer,
           feature = marker.feature;
-
+      console.log(feature.properties.Name);
       var popupContent =  '<h2>our data<\/h2>' +
           '<p>DSN: ' + feature.properties.DSN + '<br \/>' +
           'CSO_Status: ' + feature.properties.CSO_Status + '<br \/>' +
           'Name: ' + feature.properties.Name + '<br \/>' + '<\/p>';
-      featureLayer.bindPopup(popupContent);
+      marker.bindPopup(popupContent);
     //featureLayer.bindPopup('howdy 5');
     });
 
