@@ -13,7 +13,7 @@ $(document).ready(function() {
     // });
 
     var featureLayer = L.mapbox.featureLayer()
-        .loadURL('/cso_digitalocean/cso_test_file.geojson')
+        .loadURL('https://raw.githubusercontent.com/keum/cso_digitalocean/master/cso_test_file.geojson')
         .addTo(map);
 
 
