@@ -13,6 +13,7 @@ $(document).ready(function() {
     // });
 
     var featureLayer = L.mapbox.featureLayer()
+        // NOTE: this is referencing the geojson from the Master branch, not the gh-pages branch
         .loadURL('https://raw.githubusercontent.com/keum/cso_digitalocean/master/cso_test_file.geojson')
         .addTo(map);
 
